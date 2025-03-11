@@ -1,8 +1,9 @@
-shipping_method = input("What shipping method would you like? \n Ground Shipping \n Ground Shipping Premium \n Drone Shipping ")
+shipping_method = input("What shipping method would you like? \n Ground Shipping \n Ground Shipping Premium \n Drone Shipping \n")
 weight = input("How many pounds is your package? ")
+weight = float(weight)
 
-print(f"You choose {shipping_method} for delivery of a {weight}lbs package. Is this correct?")
-decision = input("Yes or No")
+print(f"You chose {shipping_method} for delivery of a {weight}lbs package. Is this correct?")
+decision = input("Yes or No \n")
 
 
 #Ground Shipping
@@ -61,11 +62,12 @@ def cheapest_method(shipping_method):
     print("Please enter a valid shipping method: Drone Shipping, Ground Shipping, or Ground Shipping Premium")
 
 
-while true:
-    if decision == "Yes" or decision == "yes":
-        cheapest_method(shipping_method)
-    else:
-        print("Please enter Yes or No")
+if decision == "Yes" or decision == "yes":
+    cheapest_method(shipping_method)
+elif decision == "No" or decision == "no":
+    print("Please select the shipping method")
+else:
+    print("Please enter Yes or No")
 
 
 
